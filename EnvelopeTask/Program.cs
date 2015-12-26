@@ -1,21 +1,20 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnvelopeTask
+
+namespace convert
 {
     class Program
     {
         static void Main(string[] args)
         {
             double a, b, c, d;
-
-
             Console.WriteLine("Введите сторону a первого конверта: ");
-            try {
-
+            try
+            {
                 a = Convert.ToDouble(Console.ReadLine());
             }
             catch
@@ -58,17 +57,23 @@ namespace EnvelopeTask
                 Console.WriteLine("Конверты одинаковы");
             else
             {
-                if (((a < c) && (b < d) || (a < d) && (b < c)))
-                    Console.WriteLine("Первый конверт можно вложить во второй");
-                else if (((c < a) && (d < b) || (d < a) && (c < b)))
-                    Console.WriteLine("Второй конверт можно вложить в первый");
+                if (((a == c) && (b == d) || (a == d) && (b == c)))
+                    Console.WriteLine("Конверты одинаковы");
+                else
+                {
+                    if (((a < c) && (b < d) || (a < d) && (b < c)))
+                        Console.WriteLine("Первый конверт можно вложить во второй");
+                    else if (((c < a) && (d < b) || (d < a) && (c < b)))
+                        Console.WriteLine("Второй конверт можно вложить в первый");
+                }
+
             }
-                    Console.ReadLine();
+            Console.WriteLine("Введите слово exit для выхода");
+            while (Console.ReadLine() != "exit")
+            {
+                Console.WriteLine("Введите слово exit для выхода");
+            }
+            return;
         }
-
-
-
-
-
     }
 }
